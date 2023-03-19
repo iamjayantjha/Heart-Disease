@@ -5,7 +5,7 @@ model = pickle.load(open('model_decision_tree.pkl','rb'))
 app = Flask(__name__)
 @app.route('/')
 def index():
-    return "Starting"
+    return "Welcome to the Heart Disease Prediction API"
 @app.route('/predict/',methods=['POST'])
 def predict():
     age = float(request.form.get('age'))
