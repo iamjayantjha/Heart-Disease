@@ -1,7 +1,7 @@
 from flask import Flask,request,jsonify
 import numpy as np
 import pickle
-model = pickle.load(open('model_svm.pkl','rb'))
+model = pickle.load(open('model_decision_tree.pkl','rb'))
 app = Flask(__name__)
 @app.route('/')
 def index():
