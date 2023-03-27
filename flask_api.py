@@ -1,12 +1,12 @@
 from flask import Flask,request,jsonify
 import numpy as np
 import pickle
-model = pickle.load(open('model_decision_tree.pkl','rb'))
+model = pickle.load(open('model_logistic_regression.pkl','rb'))
 app = Flask(__name__)
 @app.route('/')
 def index():
     return "Welcome to the Heart Disease Prediction API"
-@app.route('/predict/',methods=['POST'])
+@app.route('/predict/',methods=['GET'])
 def predict():
     age = float(request.form.get('age'))
     sex = float(request.form.get('sex'))
