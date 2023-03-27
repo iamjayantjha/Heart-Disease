@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return "Welcome to the Heart Disease Prediction API"
-@app.route('/predict/',methods=['GET'])
+@app.route('/predict/',methods=['POST'])
 def predict():
     age = float(request.form.get('age'))
     sex = float(request.form.get('sex'))
