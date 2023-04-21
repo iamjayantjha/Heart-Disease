@@ -1,7 +1,7 @@
 from flask import Flask,request,jsonify
 import numpy as np
 import pickle
-model = pickle.load(open('model_logistic_regression.pkl','rb'))
+model = pickle.load(open('model_random_forest.pkl','rb'))
 app = Flask(__name__)
 @app.route('/')
 def index():
@@ -26,4 +26,5 @@ def predict():
     result = model.predict(input_data_reshaped)
     return jsonify({'heart_disease':str(result)})
 if __name__ == '__main__':
+    
     app.run(debug=True)

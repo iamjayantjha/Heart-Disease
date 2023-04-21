@@ -6,10 +6,11 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import svm
 from sklearn.metrics import accuracy_score
-heart_data = pd.read_csv('heart_disease.csv')
+heart_data = pd.read_csv('heart.csv')
+# print(heart_data.tail)
 I = heart_data.drop(columns = 'target', axis=1)
 O = heart_data['target']
-I_train, I_test, O_train, O_test = train_test_split(I, O, test_size=0.2, stratify=O, random_state=2)
+I_train, I_test, O_train, O_test = train_test_split(I, O, test_size=0.3, stratify=O, random_state=2)
 print(I.shape, I_train.shape, I_test.shape)
 model = RandomForestClassifier(max_depth=None, random_state=0)
 model.fit(I_train, O_train)
